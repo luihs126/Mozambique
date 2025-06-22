@@ -1,924 +1,933 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mozambique Gorras</title>
   <style>
     body {
+      font-family: 'Arial', sans-serif;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fdfaf4; /* color claro vintage */
-      color: #1a1a1a;
+      padding: 0;
+      background: #f5f5dc; /* Beige claro */
+      color: #222;
     }
-   header {
-  width: 100%;
-  max-width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  background-color: #000; /* si querés fondo negro */
-}
 
-.logo {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-    nav {
-      background-color: #c57206;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 0.5rem 0;
-    }
-    nav a {
+    header {
+      background-color: #161614; /* Rojo oscuro */
       color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .logo {
+      max-width: 180px;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      background: #222;
+      text-align: center;
+      padding: 10px;
+    }
+
+    nav a {
+      color: #f5f5dc;
+      margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    section {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    #catalogo img {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 10px;
-      margin-top: 50px;
-    }
-    .modelo {
-      width: 250px;
-      display: inline-block;
-      margin-right: 50px;
-    }
-    .modelo h3 {
-      margin: 0.5rem 0 0.2rem;
-    }
-    .btn-whatsapp {
-      display:block; 
-      background-color:#25D366; 
-      color:white; text-align:center;
-      padding:10px; 
-      text-decoration:none; 
-      font-weight:bold; 
-      margin-top:15px; 
-      border-radius:5px;
-    }
-    .btn-instagram{
-      display: block;
-      background-color: #E1306C;
+
+    /* .banner {
+      background: url('banner.jpg') no-repeat center center;
+      background-size: cover;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: white;
-      padding: 10px 20px;
-      text-align: center;
+      text-shadow: 1px 1px 5px #000;
+      font-size: 2em;
       font-weight: bold;
+    } */
+    
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      align-items: stretch;
+    }
+
+    .producto {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .producto img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .producto h3 {
+      margin: 10px 0 5px;
+    }
+
+    .precio {
+      color: #8b0000;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .boton {
+      background: #8b0000;
+      color: #f5f5dc;
+      padding: 10px 15px;
       border-radius: 5px;
       text-decoration: none;
-      font-family: Arial, sans-serif;
+      font-weight: bold;
+      transition: background 0.3s;
     }
+
+    .boton:hover {
+      background: #600000;
+    }
+
     footer {
-      background-color: #000;
-      color: #fff;
+      background: #222;
+      color: #f5f5dc;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+      padding: 20px;
+      margin-top: 30px;
     }
+
+    footer a {
+      color: #f5f5dc;
+      text-decoration: underline;
+    }
+
+    .boton-inicio-fijo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff6600; /* Color de Mozambique */
+  color: white;
+  padding: 12px 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+.boton-inicio-fijo:hover {
+  background-color: #cc5500;
+}
+
+.boton-whatsapp {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+.boton-whatsapp:hover {
+  background-color: #1ebc59;
+}
+.icono-wsp {
+  width: 20px;
+  height: 20px;
+}
+
+.info-precios {
+  background-color: #fef8e7;
+  border-left: 6px solid #ff6600;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  font-family: sans-serif;
+}
+.info-precios h3 {
+  margin-top: 0;
+  color: #ff6600;
+}
+.info-precios ul {
+  list-style: none;
+  padding-left: 0;
+}
+.info-precios li {
+  margin: 10px 0;
+  font-size: 16px;
+}
+.info-precios strong {
+  color: #333;
+}
   </style>
 </head>
 <body>
+
   <header>
-  <img src="header.png" alt="Logo de Mozambique" class="logo">
-</header>
+    <img src="logo.png" alt="Logo Mozambique" class="logo" />
+    <h3>VENTAS POR MENOR Y MAYOR * ENVIOS A TODO EL CHACO</h3>
+  </header>
 
   <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#catalogo">Catálogo</a>
-    <a href="#nosotros">Nosotros</a>
+    <a href="#deportivas">Inicio</a>
+    <a href="#urbanas">Catalogo</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <section id="inicio">
-    <h2>Bienvenidos a Mozambique</h2>
-    <p>Gorras seleccionadas para los que marcan diferencia, estilo que hablo por vos</p>
-  </section>
+  <div id="inicio"></div>
 
-  <section id="catalogo">
-    <h2>Catálogo</h2>
+  <!-- <div class="banner"></div> -->
+  <div class="info-precios">
+    <h3>Precios por unidad y por cantidad:</h3>
+  <ul>
+    <li>💰 Precio por unidad: <strong>$15.000</strong></li>
+    <li>🧢 Llevando <strong>3 unidades</strong>: el precio por gorra es de <strong>$10.000</strong></li>
+    <li>📦 Llevando <strong>5 o más unidades</strong>: cada gorra queda a <strong>$9.000</strong></li>
+  </ul>
+  <p>Consultanos por WhatsApp para hacer tu pedido 👇</p>
+  </div>
 
-    <div class="modelo">
-      <img src="tommy (3).jpg" alt="Gorra modelo 1">
+  <a href="#inicio" class="boton-inicio-fijo">↑ Inicio</a>
+
+  <div id="inicio"></div>
+
+  <a href="https://wa.me/543644507941" class="boton-whatsapp" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="icono-wsp">
+  WhatsApp
+</a>
+
+  <section class="productos" id="deportivas">
+    <div class="producto">
+      <img src="tommy (3).jpg" alt="Gorra 1" />
       <h3>Tommy Hilfiger classic</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20TommyHilfiger%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="tommy (2).jpg" alt="Gorra modelo 2">
-      <h3>Tommy Hilfiger Min. Oro</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20TommyHilfiger oro%20">Comprar por WhatsApp</a>
-    </div>
-
-    <div class="modelo">
-      <img src="tommy (4).jpg" alt="Gorra modelo 3">
-      <h3>Tommy Hilfiger</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20TommyHilfiger%20">Comprar por WhatsApp</a>
-    </div>
-
-    <div class="modelo">
-      <img src="tommy (5).jpg" alt="Gorra modelo 4">
+    <div class="producto">
+      <img src="tommy (5).jpg" alt="Gorra 2" />
       <h3>Tommy Hilfiger Min Negra</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20TommyHilfiger min Negra%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Me%20interesa%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="tommy 1.jpg" alt="Gorra modelo 5">
-      <h3>Tommy Hilfiger Est. Negra</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20TommyHilfiger Est. Negra%20">Comprar por WhatsApp</a>
+    <div class="producto">
+      <img src="tommy (2).jpg" alt="Gorra 3" />
+      <h3>Tommy Hilfiger Min Oro</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Me%20interesa%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="tommy.jpg" alt="Gorra modelo 6">
-      <h3>Tommy Hilfiger min Negra</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20TommyHilfiger%20">Comprar por WhatsApp</a>
-    </div>
-
-    <div class="modelo">
-      <img src="tommy2.jpg" alt="Gorra modelo 7">
-      <h3>Tommy Hilfiger </h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20TommyHilfiger%20">Comprar por WhatsApp</a>
-    </div>
-
-    <div class="modelo">
-      <img src="tommy3.jpg" alt="Gorra modelo 8">
-      <h3>Tommy Hilfiger Azul</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20TommyHilfiger%20">Comprar por WhatsApp</a>
+    <div class="producto">
+      <img src="tommy (4).jpg" alt="Gorra 4" />
+      <h3>Tommy Hilfiger Est Oro</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
     
-    <div class="modelo">
-      <img src="tommy4.jpg" alt="Gorra modelo 9">
+    <div class="producto">
+      <img src="tommy 1.jpg" alt="Gorra 5" />
+      <h3>Tommy Hilfiger Est Negra</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
+    </div>
+  
+    <div class="producto">
+      <img src="tommy.jpg" alt="Gorra 6" />
+      <h3>Tommy Hilfiger min Negra</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
+    </div>
+
+    <div class="producto">
+      <img src="tommy2.jpg" alt="Gorra 7" />
       <h3>Tommy Hilfiger</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20TommyHilfiger%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="tommy5.jpg" alt="Gorra modelo 10">
-      <h3>Tommy Hilfiger Roja</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20TommyHilfiger Roja%20">Comprar por WhatsApp</a>
+     <div class="producto">
+      <img src="tommy3.jpg" alt="Gorra 8" />
+      <h3>Tommy Hilfiger Est Azul</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="red bull (2).jpg" alt="Gorra modelo 11">
-      <h3>Red Bull Racing - Blanca</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20RedBull Racing-Blanca%20">Comprar por WhatsApp</a>
+    <div class="producto">
+      <img src="tommy4.jpg" alt="Gorra 9" />
+      <h3>Tommy Hilfiger</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="red bull (3).jpg" alt="Gorra modelo 12">
+    <div class="producto">
+      <img src="tommy5.jpg" alt="Gorra 10" />
+      <h3>Tommy Hilfiger Est Roja</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
+    </div>
+
+    <div class="producto">
+      <img src="red bull (2).jpg" alt="Gorra 11" />
+      <h3>Red Bull Racing  Blanca</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
+    </div>
+
+    <div class="producto">
+      <img src="red bull (3).jpg" alt="Gorra 12" />
       <h3>Red Bull Racing - Negra</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Red Bull Racing Negra%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="red bull 5.jpg" alt="Gorra modelo 13">
-      <h3>Red Bull Classic - Blanca</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Red Bull Classic Blanca%20">Comprar por WhatsApp</a>
-    </div>
-
-    <div class="modelo">
-      <img src="red bull.jpg" alt="Gorra modelo 14">
+    <div class="producto">
+      <img src="red bull 5.jpg" alt="Gorra 13" />
       <h3>Red Bull Racing - Gris</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra Red Bull Racing Gris%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="red bull1.jpg" alt="Gorra modelo 15">
+    <div class="producto">
+      <img src="red bull.jpg" alt="Gorra 14" />
       <h3>Red Bull ORACLE - Roja</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Red Bull ORACLE Roja%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="red bull2.jpg" alt="Gorra modelo 16">
+    <div class="producto">
+      <img src="red bull1.jpg" alt="Gorra 15" />
+      <h3>Gorra Deportiva</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
+    </div>
+
+    <div class="producto">
+      <img src="red bull2.jpg" alt="Gorra 16" />
       <h3>Red Bull ORACLE - Negra</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Red Bull ORACLE Negra%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="red bull3.jpg" alt="Gorra modelo 17">
+    <div class="producto">
+      <img src="red bull3.jpg" alt="Gorra 17" />
       <h3>Red Bull Classic - Azul</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20TommyHilfiger%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="red bull4.jpg" alt="Gorra modelo 18">
+    <div class="producto">
+      <img src="red bull4.jpg" alt="Gorra 18" />
       <h3>Red Bull Scuderia RB</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Red Bull Scuderia RB%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="red bull5.jpg" alt="Gorra modelo 19">
+     <div class="producto">
+      <img src="red bull5.jpg" alt="Gorra 19" />
       <h3>Red Bull ORACLE - Azul</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Red Bull ORACLE Azul%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="varia1.jpg" alt="Gorra modelo 20">
+    <div class="producto">
+      <img src="varia1.jpg" alt="Gorra 20" />
       <h3>Black Br.</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%Black Br%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="vario (2).jpg" alt="Gorra modelo 21">
+     <div class="producto">
+      <img src="vario (2).jpg" alt="Gorra 21" />
       <h3>Texas Over</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Texas Over%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="vario (3).jpg" alt="Gorra modelo 22">
+     <div class="producto">
+      <img src="vario (3).jpg" alt="Gorra 22" />
       <h3>Emporio Armani</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Emporio Armani%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="vario.jpg" alt="Gorra modelo 23">
+    <div class="producto">
+      <img src="vario.jpg" alt="Gorra 23" />
       <h3>TXC Est.</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20TXC Est.%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="adidas (2).jpg" alt="Gorra modelo 24">
-      <h3>Adidas Classic - Blanca.</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Adidas Classic%20">Comprar por WhatsApp</a>
+     <div class="producto">
+      <img src="adidas (2).jpg" alt="Gorra 24" />
+      <h3>Adidas Classic - Blanca</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="adidas.jpg" alt="Gorra modelo 25">
+    <div class="producto">
+      <img src="adidas.jpg" alt="Gorra 25" />
       <h3>Adidas Ad - Beige</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%Adidas Ad Beige%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="adidas1.jpg" alt="Gorra modelo 26">
+    <div class="producto">
+      <img src="adidas1.jpg" alt="Gorra 26" />
       <h3>Adidas Classic - Negra</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%Adidas Classic Negra%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="adidas2.jpg" alt="Gorra modelo 27">
+    <div class="producto">
+      <img src="adidas2.jpg" alt="Gorra 27" />
       <h3>Adidas edi. - Negra</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Adidas Edi. Negra%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="afa1.jpg" alt="Gorra modelo 28">
+     <div class="producto">
+      <img src="afa1.jpg" alt="Gorra 28" />
       <h3>Adidas AFA - Negra</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%Adidas AFA Negra%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="afa2.jpg" alt="Gorra modelo 29">
+    <div class="producto">
+      <img src="afa2.jpg" alt="Gorra 29" />
       <h3>Adidas AFA - Dorada</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%Adidas AFA Dorada%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="lacoste (2).jpg" alt="Gorra modelo 30">
-      <h3>Adidas AFA - Dorada</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20%20">Comprar por WhatsApp</a>
+    <div class="producto">
+      <img src="lacoste (2).jpg" alt="Gorra 30" />
+      <h3>Lacoste AA</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="lacoste (3).jpg" alt="Gorra modelo 31">
-      <h3>Adidas AFA - Dorada</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20TommyHilfiger%20">Comprar por WhatsApp</a>
+     <div class="producto">
+      <img src="lacoste (3).jpg" alt="Gorra 31" />
+      <h3>Lacoste MB</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="lacoste (4).jpg" alt="Gorra modelo 31">
-      <h3>Adidas AFA - Dorada</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20TommyHilfiger%20">Comprar por WhatsApp</a>
+    <div class="producto">
+      <img src="lacoste (4).jpg" alt="Gorra 32" />
+      <h3>Lacoste NR</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
+    </div>
+    
+    <div class="producto">
+      <img src="lacoste (5).jpg" alt="Gorra 33" />
+      <h3>Lacoste Beige</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="lacoste (5).jpg" alt="Gorra modelo 32">
-      <h3>Adidas AFA - Dorada</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20TommyHilfiger%20">Comprar por WhatsApp</a>
+    <div class="producto">
+      <img src="lacoste (6).jpg" alt="Gorra 34" />
+      <h3>Lacoste Hueso</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="lacoste (6).jpg" alt="Gorra modelo 33">
-      <h3>Adidas AFA - Dorada</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20TommyHilfiger%20">Comprar por WhatsApp</a>
+    <div class="producto">
+      <img src="lacoste.jpg" alt="Gorra 35" />
+      <h3>Lacoste NN</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="lacoste.jpg" alt="Gorra modelo 34">
-      <h3>Adidas AFA - Dorada</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20TommyHilfiger%20">Comprar por WhatsApp</a>
+    <div class="producto">
+      <img src="lacoste1.jpg" alt="Gorra 36" />
+      <h3>Lacoste Classic Marron</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="lacoste1.jpg" alt="Gorra modelo 35">
-      <h3>Adidas AFA - Dorada</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20TommyHilfiger%20">Comprar por WhatsApp</a>
+     <div class="producto">
+      <img src="lacoste2.jpg" alt="Gorra 37" />
+      <h3>Lacoste Classic Blanca</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="lacoste2.jpg" alt="Gorra modelo 36">
-      <h3>Adidas AFA - Dorada</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20TommyHilfiger%20">Comprar por WhatsApp</a>
+    <div class="producto">
+      <img src="lacoste3.jpg" alt="Gorra 38" />
+      <h3>Lacoste AB</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="lacoste3.jpg" alt="Gorra modelo 37">
-      <h3>Adidas AFA - Dorada</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20TommyHilfiger%20">Comprar por WhatsApp</a>
+    <div class="producto">
+      <img src="lacoste4.jpg" alt="Gorra 39" />
+      <h3>Lacoste Classic Beige</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="lacoste4.jpg" alt="Gorra modelo 38">
-      <h3>Adidas AFA - Dorada</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20TommyHilfiger%20">Comprar por WhatsApp</a>
+    <div class="producto">
+      <img src="lacoste5.jpg" alt="Gorra 40" />
+      <h3>Lacoste min Bordo</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="lacoste5.jpg" alt="Gorra modelo 39">
-      <h3>Adidas AFA - Dorada</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20TommyHilfiger%20">Comprar por WhatsApp</a>
+    <div class="producto">
+      <img src="lacoste6.jpg" alt="Gorra 41" />
+      <h3>Lacoste T Turquesa</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="lacoste6.jpg" alt="Gorra modelo 40">
-      <h3>Adidas AFA - Dorada</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20TommyHilfiger%20">Comprar por WhatsApp</a>
-    </div>
-
-     <div class="modelo">
-      <img src="vintage (2).jpg" alt="Gorra modelo 41">
-      <h3>Vintage copa - Gris</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%Vintage Copa Gris%20">Comprar por WhatsApp</a>
-    </div>
-
-    <div class="modelo">
-      <img src="vintage (3).jpg" alt="Gorra modelo 42">
+     <div class="producto">
+      <img src="vintage (2).jpg" alt="Gorra 42" />
       <h3>Vintage Mate - Gris</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Vintage Mate Gris%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="vintage montaña.jpg" alt="Gorra modelo 42">
+    <div class="producto">
+      <img src="vintage (3).jpg" alt="Gorra 43" />
+      <h3>Vintage Mate - Gris</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
+    </div>
+
+     <div class="producto">
+      <img src="vintage montaña.jpg" alt="Gorra 44" />
       <h3>Vintage Mont Cielo</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Vintage Mont cielo%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="vintage.jpg" alt="Gorra modelo 43">
+    <div class="producto">
+      <img src="vintage.jpg" alt="Gorra 45" />
       <h3>Vintage Mont Uva</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Vintage Mont Uva%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="vintage2.jpg" alt="Gorra modelo 44">
+     <div class="producto">
+      <img src="vintage2.jpg" alt="Gorra 46" />
       <h3>Vintage Copa de vino - Amarilla</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Vintage Copa Vino Amarilla%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="vintage3.jpg" alt="Gorra modelo 45">
+     <div class="producto">
+      <img src="vintage3.jpg" alt="Gorra 47" />
       <h3>Vintage Copa Uva</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Vintage Copa Uva%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="vintage4.jpg" alt="Gorra modelo 46">
+     <div class="producto">
+      <img src="vintage4.jpg" alt="Gorra 48" />
       <h3>Vintage Copa Rosa</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Vintage Copa Rosa%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="vintage5.jpg" alt="Gorra modelo 47">
+    <div class="producto">
+      <img src="vintage5.jpg" alt="Gorra 49" />
       <h3>Vintage Mate - Verde</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Vintage Mate Verde%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="vintage6.jpg" alt="Gorra modelo 48">
+    <div class="producto">
+      <img src="vintage6.jpg" alt="Gorra 50" />
       <h3>Vintage copa - Azul</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Vintage Copa Azul%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="jhon deere.jpg" alt="Gorra modelo 49">
+    <div class="producto">
+      <img src="jhon deere.jpg" alt="Gorra 51" />
       <h3>John Deere truck</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20John Deere Truck%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="jhon deere1.jpg" alt="Gorra modelo 50">
+    <div class="producto">
+      <img src="jhon deere1.jpg" alt="Gorra 52" />
       <h3>John Deere Clasic</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%Jhon Deere Classic%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="jhon deere2.jpg" alt="Gorra modelo 51">
+    <div class="producto">
+      <img src="jhon deere2.jpg" alt="Gorra 53" />
       <h3>John Deere Green</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20John Deere Green%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="jhon deere3.jpg" alt="Gorra modelo 52">
+     <div class="producto">
+      <img src="jhon deere3.jpg" alt="Gorra 54" />
       <h3>John Deere</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20John Deere %20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="cat (2).jpg" alt="Gorra modelo 53">
+    <div class="producto">
+      <img src="cat (2).jpg" alt="Gorra 55" />
       <h3>Cat Construction</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Cat Construction%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="cat.jpg" alt="Gorra modelo 54">
+     <div class="producto">
+      <img src="cat.jpg" alt="Gorra 56" />
       <h3>Cat vintage</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Cat Vintage%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="cat2.jpg" alt="Gorra modelo 55">
+    <div class="producto">
+      <img src="cat1.jpg" alt="Gorra 57" />
+      <h3>Caterplillar 1904</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
+    </div>
+
+    <div class="producto">
+      <img src="cat2.jpg" alt="Gorra 58" />
       <h3>Caterpillar Clasic</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Caterpillar Classic%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="cerveza (2).jpg" alt="Gorra modelo 56">
+    <div class="producto">
+      <img src="cat2.jpg" alt="Gorra 58" />
+      <h3>Caterpillar Clasic</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
+    </div>
+
+     <div class="producto">
+      <img src="cerveza (2).jpg" alt="Gorra 59" />
       <h3>Budweiser king of beer</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20 Budweiser King of Beer%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="cerveza.jpg" alt="Gorra modelo 57">
+     <div class="producto">
+      <img src="cerveza.jpg" alt="Gorra 60" />
       <h3>Heineken Clasica</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%Heineken Clasica%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="cerveza1.jpg" alt="Gorra modelo 58">
+     <div class="producto">
+      <img src="cerveza1.jpg" alt="Gorra 61" />
       <h3>Heineken Pro</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Heineken Pro%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="ferrari.jpg" alt="Gorra modelo 59">
+    <div class="producto">
+      <img src="ferrari.jpg" alt="Gorra 62" />
       <h3>Ferrari Edicion Blanca</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Ferrari Edicion Blanca%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="ferrari1.jpg" alt="Gorra modelo 60">
+     <div class="producto">
+      <img src="ferrari1.jpg" alt="Gorra 63" />
       <h3>Ferrari Classic Red</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Ferrari Classic Red%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="ferrari2.jpg" alt="Gorra modelo 61">
+    <div class="producto">
+      <img src="ferrari2.jpg" alt="Gorra 64" />
       <h3>Ferrari 00s</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Ferrari 00s%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="ferrari4.jpg" alt="Gorra modelo 62">
+     <div class="producto">
+      <img src="ferrari4.jpg" alt="Gorra 65" />
       <h3>Ferrari Classic Negra</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Ferrari Classic Negra%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="ferrari5.jpg" alt="Gorra modelo 63">
+    <div class="producto">
+      <img src="ferrari5.jpg" alt="Gorra 66" />
       <h3>Ferrari Scuderia</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Ferrari Scuderia%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="ferrari6.jpg" alt="Gorra modelo 64">
+    <div class="producto">
+      <img src="ferrari6.jpg" alt="Gorra 67" />
       <h3>Ferrari F1</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Ferrari F1%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="nike (2).jpg" alt="Gorra modelo 65">
+     <div class="producto">
+      <img src="nike (2).jpg" alt="Gorra 68" />
       <h3>NIKE Mtz Beige</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20NIKE Mtz Beige%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="nike.jpg" alt="Gorra modelo 66">
+     <div class="producto">
+      <img src="nike.jpg" alt="Gorra 69" />
       <h3>Nike SB</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Nike SB%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="nike1.jpg" alt="Gorra modelo 67">
-      <h3>NIKE Mtz Verde</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20NIKE Mtz Verde%20">Comprar por WhatsApp</a>
-    </div>
-
-     <div class="modelo">
-      <img src="puma (2).jpg" alt="Gorra modelo 68">
+    <div class="producto">
+      <img src="puma (2).jpg" alt="Gorra 70" />
       <h3>Puma RUN</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Puma RUN%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="puma.jpg" alt="Gorra modelo 69">
+     <div class="producto">
+      <img src="puma.jpg" alt="Gorra 71" />
       <h3>Puma Blanca</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Puma Blanca%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="puma1 (2).jpg" alt="Gorra modelo 70">
+    <div class="producto">
+      <img src="puma1 (2).jpg" alt="Gorra 72" />
       <h3>Puma RUN negra</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Puma RUN Negra%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="puma1.jpg" alt="Gorra modelo 71">
+    <div class="producto">
+      <img src="puma1.jpg" alt="Gorra 72" />
       <h3>Puma Classic Gris</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Puma Gris Classic%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="bu (2).jpg" alt="Gorra modelo 72">
+    <div class="producto">
+      <img src="bu (2).jpg" alt="Gorra 73" />
       <h3>BuH Cielo</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20BuH Cielo%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="bu (3).jpg" alt="Gorra modelo 73">
+     <div class="producto">
+      <img src="bu (3).jpg" alt="Gorra 74" />
       <h3>BuH Marron</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20BuH Marron%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="bu.jpg" alt="Gorra modelo 74">
+    <div class="producto">
+      <img src="bu.jpg" alt="Gorra 75" />
       <h3>BuH Verde</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20BuH Verde%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="bu1.jpg" alt="Gorra modelo 75">
+    <div class="producto">
+      <img src="bu1.jpg" alt="Gorra 76" />
       <h3>BuH Negra</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20BuH Negra%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="bu2.jpg" alt="Gorra modelo 76">
-      <h3>BuH Clasica Negra</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20BuH Clasica Negra%20">Comprar por WhatsApp</a>
-    </div>
-
-    <div class="modelo">
-      <img src="bu4.jpg" alt="Gorra modelo 77">
+    <div class="producto">
+      <img src="bu2.jpg" alt="Gorra 77" />
       <h3>BuH Clasica Blanca</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20BhU Clasica Blanca%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="Honda verde marron.jpg" alt="Gorra modelo 78">
+     <div class="producto">
+      <img src="bu4.jpg" alt="Gorra 78" />
+      <h3>Ferrari F1</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
+    </div>
+
+     <div class="producto">
+      <img src="Honda verde marron.jpg" alt="Gorra 79" />
       <h3>Honda Racing Team verde</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Honda Racing Team Verde%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="honda1.jpg" alt="Gorra modelo 79">
+     <div class="producto">
+      <img src="honda1.jpg" alt="Gorra 80" />
       <h3>Honda Racing Team gris</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Honda RAcing Team Gris%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="honda2.jpg" alt="Gorra modelo 80">
+    <div class="producto">
+      <img src="honda2.jpg" alt="Gorra 81" />
       <h3>Honda Japan RG</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Honda Japan RG%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="ford.jpg" alt="Gorra modelo 81">
+     <div class="producto">
+      <img src="ford.jpg" alt="Gorra 82" />
       <h3>Ford MotoSport</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Ford Motorsport%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="mitsubishi1.jpg" alt="Gorra modelo 82">
+    <div class="producto">
+      <img src="mitsubishi1.jpg" alt="Gorra 83" />
       <h3>MITSUBISHI Racing</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Mitsubishi Racing%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="toyota.jpg" alt="Gorra modelo 83">
+    <div class="producto">
+      <img src="toyota.jpg" alt="Gorra 84" />
       <h3>Toyota GR Red</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Toyota GR Red%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="agro (2).jpg" alt="Gorra modelo 84">
-      <h3>AGRO Farm Marron</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20AGRO Farm Marron%20">Comprar por WhatsApp</a>
+     <div class="producto">
+      <img src="agro (2).jpg" alt="Gorra 85" />
+      <h3>Agro Farm Marron</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="agro.jpg" alt="Gorra modelo 85">
-      <h3>AGRO Farm Jeans</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20AGRO Farm Jeans%20">Comprar por WhatsApp</a>
+    <div class="producto">
+      <img src="agro.jpg" alt="Gorra 86" />
+      <h3>Agro Farm Jeans</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="boca.jpg" alt="Gorra modelo 86">
-      <h3>Boca J. ORO</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Boca Junior Oro%20">Comprar por WhatsApp</a>
+     <div class="producto">
+      <img src="boca.jpg" alt="Gorra 87" />
+      <h3>Boca Juniors</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="river1.jpg" alt="Gorra modelo 87">
-      <h3>River Plate </h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20River Plate%20">Comprar por WhatsApp</a>
+    <div class="producto">
+      <img src="river1.jpg" alt="Gorra 88" />
+      <h3>River Plate</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="jorda1.jpg" alt="Gorra modelo 88">
+     <div class="producto">
+      <img src="jorda1.jpg" alt="Gorra 90" />
       <h3>Air Jordan Caps</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Air Jordan Caps%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="loro.jpg" alt="Gorra modelo 89">
-      <h3>L.A.</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20L.A.%20">Comprar por WhatsApp</a>
+     <div class="producto">
+      <img src="loro.jpg" alt="Gorra 91" />
+      <h3>LA</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="nyc1.jpg" alt="Gorra modelo 90">
+     <div class="producto">
+      <img src="nyc1.jpg" alt="Gorra 92" />
       <h3>NYCity</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20NYCity%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="oso.jpg" alt="Gorra modelo 91">
-      <h3>47 MVP blanca</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%2047 MVP Blanca%20">Comprar por WhatsApp</a>
+     <div class="producto">
+      <img src="oso.jpg" alt="Gorra 93" />
+      <h3>47 MVP Blanca</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="oso1.jpg" alt="Gorra modelo 92">
-      <h3>47 VMP azul</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%2047 MVP Azul%20">Comprar por WhatsApp</a>
+    <div class="producto">
+      <img src="oso1.jpg" alt="Gorra 94" />
+      <h3>47 MVP Azul</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="pesca (2).jpg" alt="Gorra modelo 93">
-      <h3>Pesca SCD</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Pesca SCD%20">Comprar por WhatsApp</a>
-    </div>
-
-     <div class="modelo">
-      <img src="pesca (3).jpg" alt="Gorra modelo 94">
-      <h3>Fishing Team</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Fishing Team%20">Comprar por WhatsApp</a>
-    </div>
-
-    <div class="modelo">
-      <img src="pesca.jpg" alt="Gorra modelo 95">
+    <div class="producto">
+      <img src="pesca (2).jpg" alt="Gorra 95" />
       <h3>Pesca Deportiva</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Pesca Deportiva%20">Comprar por WhatsApp</a>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-     <div class="modelo">
-      <img src="quiksilver gris.jpg" alt="Gorra modelo 96">
-      <h3>Quiksilver</h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Quiksilver%20">Comprar por WhatsApp</a>
+    <div class="producto">
+      <img src="pesca (3).jpg" alt="Gorra 96" />
+      <h3>Pesca SCD</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
 
-    <div class="modelo">
-      <img src="religiosa1.jpg" alt="Gorra modelo 97">
-      <h3>Religion </h3>
-      <p><strong>💵 Precio unitario:</strong> $15.000</p>
-      <p><strong>📦 Llevando 3 o más:</strong> $10.000 c/u</p>
-      <a class="btn-whatsapp" href="https://wa.me/5493644507941?text=Hola!%20Estoy%20interesado%20en%20la%20Gorra%20Religion%20">Comprar por WhatsApp</a>
+    <div class="producto">
+      <img src="pesca.jpg" alt="Gorra 97" />
+      <h3>Fishing Team</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
     </div>
-    <!-- Agregá más modelos copiando este bloque -->
+
+    <div class="producto">
+      <img src="quiksilver gris.jpg" alt="Gorra 98" />
+      <h3>QuikSilver fgs</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
+    </div>
+
+    <div class="producto">
+      <img src="religiosa1.jpg" alt="Gorra 99" />
+      <h3>Religion</h3>
+      <p class="precio">$15.000</p>
+      <a class="boton" href="https://wa.me/543644507941?text=Hola!%20Quiero%20comprar%20una%20gorra">Comprar por WhatsApp</a>
+    </div>
+
   </section>
 
-  <section id="nosotros">
-    <h2>Sobre Nosotros</h2>
-    <p>Mozambique nace con la idea de ofrecer gorras con personalidad, estilo urbano y calidad. Reunimos modelos únicos para quienes quieren destacarse con lo que llevan puesto.</p>
-  </section>
-
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>¿Querés hacer un pedido, consultar stock o revender? Escribinos directo:</p>
-    <a class="btn-whatsapp" href="https://wa.me/5493644507941">Escribir por WhatsApp</a>
-     <p>Seguinos en nuestra pagina de Instagram para enterarte de todas las novedades:</p>
-    <a class="btn-instagram" href="https://www.instagram.com/mozambique.caps/">Seguir en Instagram</a>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Mozambique Gorras - Todos los derechos reservados</p>
+  <footer id="contacto">
+    <p>Instagram: <a href="https://instagram.com/mozambique.caps" target="_blank">@mozambique.caps</a></p>
+    <p>Email: <a href="mailto:luihs126@gmail.com">luihs126@gmail.com</a></p>
+    <p>Sáenz Peña, Chaco – Argentina</p>
+    <p>© 2025 Mozambique Gorras - Todos los derechos reservados</p>
   </footer>
+
 </body>
 </html>
